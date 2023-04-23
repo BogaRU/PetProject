@@ -1,0 +1,24 @@
+<form *ngIf="task" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Title:</label>
+    <input id="title" type="text" [(ngModel)]="task.title" name="title">
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" [(ngModel)]="task.description" name="description"></textarea>
+  </div>
+  <div>
+    <label for="dueDate">Due Date:</label>
+    <input id="dueDate" type="date" [(ngModel)]="task.dueDate" name="dueDate">
+  </div>
+  <div>
+    <label for="status">Status:</label>
+    <select id="status" [(ngModel)]="task.status" name="status">
+      <option value="Not Started">Not Started</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Completed">Completed</option>
+    </select>
+  </div>
+  <button>Update Task</button>
+  <button (click)="onDelete()">Delete Task</button>
+</form>
